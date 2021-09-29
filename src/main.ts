@@ -1,5 +1,4 @@
 import { app, BrowserWindow } from 'electron';
-import isDev from 'electron-is-dev'; // New Import
 
 const createWindow = (): void => {
   let win = new BrowserWindow({
@@ -9,7 +8,6 @@ const createWindow = (): void => {
       nodeIntegration: true
     }
   });
-  console.log(isDev);
   win.loadURL(`file://${app.getAppPath()}/index.html`);
 }
 
