@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
 const App = () => {
 
   return (
     <div className="app">
-      <h1>I'm a boilerplate!</h1>
+      <Test>I'm a boilerplate!</Test>
     </div>
   );
 }
+
+const Test = styled.h1`
+  font-weight: bolder
+`
 
 export default App;
