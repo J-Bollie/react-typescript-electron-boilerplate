@@ -4,7 +4,10 @@ module.exports = {
   // Build Mode
   mode: 'development',
   // Electron Entrypoint
-  entry: './src/main.ts',
+  entry: {
+    main: './src/main.ts',
+    preload: './src/preload.ts'
+  },
   target: 'electron-main',
   resolve: {
     alias: {
@@ -21,6 +24,6 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: 'main.js'
+    filename: '[name].bundle.js'
   }
 }

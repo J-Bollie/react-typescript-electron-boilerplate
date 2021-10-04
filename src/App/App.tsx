@@ -4,9 +4,7 @@ import styled from 'styled-components';
 const App = () => {
 
   return (
-    <div className="app">
-      <Test>I'm a boilerplate!</Test>
-    </div>
+    <Test>I'm a boilerplate!</Test>
   );
 }
 

@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: './src/renderer.tsx',
+  /*Out comment the target line below to start the webpack-dev-server*/
   target: 'electron-renderer',
   devtool: 'source-map',
   resolve: {
@@ -35,7 +36,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      inject: true,
       template: './src/index.html'
     })
-  ]
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    hot: true,
+    open: true,
+    compress: true,
+    port: 9000,
+  },
 };
