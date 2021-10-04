@@ -27,6 +27,13 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(png|jpe?g|gif|jp2|webp|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'images/[name].[ext]'
+        }
       }
     ]
   },
