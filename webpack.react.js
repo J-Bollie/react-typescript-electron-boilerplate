@@ -14,11 +14,12 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.ts(x?)$/,
         include: /src/,
-        use: [{ loader: 'ts-loader' }]
+        use: [{
+          loader: 'ts-loader'
+        }]
       },
       {
         test: /\.s[ac]ss$/i,
@@ -29,11 +30,15 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|jp2|webp|svg)$/,
+        test: /\.(png|jpe?g|gif|jp2|webp)$/,
         loader: 'file-loader',
         options: {
           name: 'images/[name].[ext]'
         }
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
       }
     ]
   },

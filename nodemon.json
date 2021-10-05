@@ -3,6 +3,6 @@
       "src/main.ts", 
       "src/electron/*"
     ],
-    "exec": "webpack --config ./webpack.electron.js && electron ./dist/main.js",
+    "exec": "webpack --config ./webpack.electron.js && electron ./dist/main.bundle.js",
     "ext": "ts"
   }
