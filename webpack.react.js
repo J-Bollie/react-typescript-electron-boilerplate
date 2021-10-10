@@ -1,10 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-module.exports = {
-  mode: 'development',
+let config = {
   entry: './src/renderer.tsx',
-  /*Out comment the target line below to start the webpack-dev-server*/
   target: 'electron-renderer',
   devtool: 'source-map',
   resolve: {
@@ -39,7 +37,7 @@ module.exports = {
       {
         test: /\.svg$/,
         use: ['@svgr/webpack', 'url-loader'],
-      }
+      },
     ]
   },
   output: {
@@ -61,4 +59,13 @@ module.exports = {
     compress: true,
     port: 9000,
   },
+}
+
+module.exports = (env, argv) => {
+
+  if (argv.mode === "development") {
+    config.target = "web";
+  }
+
+  return config;
 };
