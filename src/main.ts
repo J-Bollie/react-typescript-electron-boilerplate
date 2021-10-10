@@ -6,7 +6,6 @@ const createWindow = (): void => {
     width: 800,
     height: 600,
     webPreferences: {
-      webSecurity: false,
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.resolve(__dirname, "preload.bundle.js")
