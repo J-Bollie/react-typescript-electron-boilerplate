@@ -20,7 +20,7 @@ const createWindow = (): void => {
   });
 
   function isDev() {
-    return process.argv[2] == '--dev';
+    return process.argv.includes("--dev");
   }
 }
 
