@@ -8,7 +8,7 @@
     "build-production": "webpack --mode=production",
     "build": "webpack --mode=development",
     "react:dev": "webpack serve --mode=development --config ./webpack.react.js",
-    "electron:dev": "nodemon",
+    "electron:dev": "nodemon --dev",
     "start": "npm run build && nodemon"
   },
   "build": {
