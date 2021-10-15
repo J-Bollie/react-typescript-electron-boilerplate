@@ -1,20 +1,21 @@
 {
-  "name": "react-test",
+  "name": "react-typescript-electron-boilerplate",
   "version": "0.0.1",
   "description": "A electron boilerplate that can be used with React and Typescript",
   "main": "./dist/main.bundle.js",
   "scripts": {
-    "production": "npm run build-production && electron-builder build --win",
-    "build-production": "webpack --mode=production",
     "build": "webpack --mode=development",
+    "build-production": "webpack --mode=production",
+    "production": "npm run build-production && electron-builder build --win",
+    "dev": "concurrently \"npm run react:dev\" \"npm run electron:dev\"",
     "react:dev": "webpack serve --mode=development --config ./webpack.react.js",
     "electron:dev": "nodemon --dev",
     "start": "npm run build && nodemon"
   },
   "build": {
-    "appId": "be.wololo-interface.app",
-    "productName": "Wololo Interface",
-    "copyright": "Copyright © 2021 Jensen Bollen",
+    "appId": "be.example.app",
+    "productName": "React Typescript Electron Boilerplate",
+    "copyright": "Copyright © 2021 John Doe",
     "directories": {
       "output": "installer"
     },
@@ -28,7 +29,7 @@
     }
   },
   "keywords": [],
-  "author": "Jensen Bollen",
+  "author": "John Doe",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
@@ -36,6 +37,7 @@
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "@types/styled-components": "^5.1.14",
+    "concurrently": "^6.3.0",
     "electron": "^15.0.0",
     "electron-builder": "^22.11.7",
     "file-loader": "^6.2.0",
