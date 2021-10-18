@@ -21,7 +21,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "build/wololo.png"
+      "icon": "build/example.png"
     },
     "nsis": {
       "oneClick": false,
