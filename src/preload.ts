@@ -22,6 +22,9 @@ contextBridge.exposeInMainWorld(
                 // Deliberately strip event as it includes `sender` 
                 ipcRenderer.on(channel, (event, ...args) => func(...args));
             }
+        },
+        removeAllListeners: (channel:string)=>{
+            ipcRenderer.removeAllListeners(channel);
         }
     }
 );
