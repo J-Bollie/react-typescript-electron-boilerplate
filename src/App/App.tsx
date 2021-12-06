@@ -1,15 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import styled from "styled-components";
 
 const App = () => {
-
   return (
-    <Test>I'm a boilerplate!</Test>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Test>I'm a boilerplate!</Test>} />
+      </Routes>
+    </HashRouter>
   );
-}
+};
 
 const Test = styled.h1`
-  font-weight: bolder
-`
+  font-weight: bolder;
+`;
 
 export default App;

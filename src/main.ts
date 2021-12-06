@@ -1,31 +1,22 @@
-import { app, BrowserWindow, ipcMain } from 'electron';
-const path = require('path');
+import { app, BrowserWindow, ipcMain } from "electron";
+import { createMainWindow } from "@/browserWindows";
 
-const createWindow = (): void => {
-  let win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    show: false,
-    webPreferences: {
-      nodeIntegration: false,
-      contextIsolation: true,
-      preload: path.resolve(__dirname, "preload.bundle.js")
+declare global {
+  namespace NodeJS {
+    interface Global {
+      mainWindow: BrowserWindow | null;
     }
-  });
-
-  win.loadURL(isDev() ? `http://localhost:9000/` : `file://${__dirname}/index.html`).then(() => {
-    win.show();
-  }).catch((err: string) => {
-    console.log(err);
-  });
-
-  function isDev() {
-    return process.argv.includes("--dev");
   }
 }
 
-ipcMain.on("test", (e, args) => {
-  app.quit();
-})
+const createWindow = () => {
+  global.mainWindow = createMainWindow();
+};
 
-app.on('ready', createWindow);
+ipcMain.on("test", (e, args) => {
+  const sender = BrowserWindow.fromWebContents(e.sender);
+
+  app.quit();
+});
+
+app.on("ready", createWindow);
