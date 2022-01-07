@@ -18,7 +18,7 @@ export const createMainWindow = () => {
     },
   });
 
-  //   window.menuBarVisible = false;
+  window.menuBarVisible = false;
 
   window
     .loadURL(
