@@ -1,6 +1,7 @@
 {
     "watch": [ 
       "src/main.ts", 
+      "src/browserWindows.ts",
       "src/electron/*"
     ],
     "exec": "webpack --config ./webpack.electron.js && electron ./dist/main.bundle.js",
