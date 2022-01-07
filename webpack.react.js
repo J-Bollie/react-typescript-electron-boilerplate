@@ -54,7 +54,7 @@ let config = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    hot: true,
+    // hot: true,
     open: true,
     compress: true,
     port: 9000,
