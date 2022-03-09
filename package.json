@@ -7,15 +7,17 @@
     "build": "webpack --mode=development",
     "build-production": "webpack --mode=production",
     "production": "npm run build-production && electron-builder build --win",
+    "production:linux": "npm run build-production && electron-builder build --linux",
     "dev": "concurrently \"npm run react:dev\" \"npm run electron:dev\"",
     "react:dev": "webpack serve --mode=development --config ./webpack.react.js",
     "electron:dev": "nodemon --dev",
     "start": "npm run build && nodemon"
   },
+  "homepage": "https://www.youtube.com/",
   "build": {
     "appId": "be.example.app",
-    "productName": "React Typescript Electron Boilerplate",
-    "copyright": "Copyright © 2021 John Doe",
+    "productName": "react-typescript-electron-boilerplate",
+    "copyright": "Copyright © 2022 John Doe",
     "directories": {
       "output": "installer"
     },
@@ -26,6 +28,14 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "target": "deb",
+      "maintainer": "Jensen Bollen",
+      "icon": "build/example.png"
+    },
+    "deb": {
+      "depends": ["gconf2", "gconf-service", "libnotify4", "libxtst6", "libnss3"]
     }
   },
   "keywords": [],
