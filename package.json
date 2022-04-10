@@ -35,7 +35,13 @@
       "icon": "build/example.png"
     },
     "deb": {
-      "depends": ["gconf2", "gconf-service", "libnotify4", "libxtst6", "libnss3"]
+      "depends": [
+        "gconf2",
+        "gconf-service",
+        "libnotify4",
+        "libxtst6",
+        "libnss3"
+      ]
     }
   },
   "keywords": [],
