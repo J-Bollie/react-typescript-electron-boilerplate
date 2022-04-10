@@ -22,7 +22,7 @@ export const createMainWindow = () => {
 
   window
     .loadURL(
-      isDev() ? `http://localhost:9000/` : `file://${__dirname}/index.html#/`
+      isDev() ? `http://localhost:9000/#/` : `file://${__dirname}/index.html#/`
     )
     .then(() => {
       window.show();
