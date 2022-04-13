@@ -39,7 +39,7 @@ const App = () => {
   );
 };
 
-const Container = styled.h1`
+const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
